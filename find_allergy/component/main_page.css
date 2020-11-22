@@ -6,12 +6,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-.main-page-main {
-    height: 300px;
-    width: 600px;
-    
-
-}
 
 .search_box {
     display: flex;
@@ -44,6 +38,8 @@ body {
     justify-content: center;
 }
 
+
+
 #search_btn {
     height: 100px;
     width: 100px;
@@ -52,13 +48,3 @@ body {
     color: #b83b5e;
 }
 
-.search_info {
-    display: flex;
-    width: 100%;
-    justify-content: left;
-}
-
-.search_info_text {
-    color: #b83b5e;
-    font-family: 'Gugi', cursive;
-}
