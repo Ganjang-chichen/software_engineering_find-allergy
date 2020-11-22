@@ -6,14 +6,22 @@
     <title>알레르기 탐색기</title>
     <link rel="stylesheet" href="./component/reset.css">
     <link rel="stylesheet" href="./component/main_page.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
 
     </header>
-    <main>
+    <main class="main-page-main">
+        <dir class="search_info">
+            <span class="search_info_text">음식 알레르기 검색</span>
+        </dir>
         <dir class="search_box">
-            <input type="text" id="search_text" placeholder="Some food">
+            <input type="text" id="search_text" 
+                placeholder="Some food">
             <button id="search_btn">
                 <i class="fas fa-search fa-2x main__search_icon"></i>
             </button>
