@@ -19,6 +19,12 @@ body {
     color: #b83b5e;
 }
 
+.form-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #search_text {
     height: 50px;
     width: 500px;
