@@ -10,7 +10,11 @@
 
     </header>
     <main>
-        <h1 class="searched">tlqkf</h1>
+        <dir>
+            <h1 class="searched">option: <%=sql_table %></h1>
+            <h1 class="searched">value: <%=value %></h1>
+        </dir>
+        
 
         <dir>
             
@@ -20,6 +24,8 @@
                     <%=list[i].id %>
                     <%=list[i].food_name %>
                     <%=list[i].food_info %>
+                    <%=list[i].allergy_name %>
+                    <%=list[i].allergy_info %>
                 </li>
                 <% } %>
             </ul>

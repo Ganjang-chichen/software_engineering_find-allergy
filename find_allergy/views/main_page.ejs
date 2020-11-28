@@ -17,9 +17,15 @@
         <h1 class="titles__main">Allergy Explorer</h1>
 
         <dir class="search_box">
-            <form action="" class="form-searchbox">
-                <input type="text" id="search_text" placeholder="Some food">
-                <button id="search_btn">
+            <form action="/main_pageAf" class="form-searchbox" method="post">
+                <select name="option" id="search-option">
+                    <optgroup label="-option-">
+                        <option value="food">food</option>
+                        <option value="allergy">allergy</option>
+                    </optgroup>
+                </select>
+                <input type="text" id="search_text" placeholder="Some food" name="searched">
+                <button id="search_btn" type="submit">
                     <i class="fas fa-search fa-2x main__search_icon"></i>
                 </button>
             </form>
@@ -29,7 +35,6 @@
 
     <footer>
         <script src="https://kit.fontawesome.com/c9ac2544ad.js" crossorigin="anonymous"></script>
-        <script src="js/main_page.js"></script>
     </footer>
     
 

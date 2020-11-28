@@ -5,6 +5,11 @@ var conn = db_config.init();
 var bodyParser = require('body-parser');
 var path = require('path');
 
+var get_sql = require(__dirname + '/config/make_query.js');
+
+var value = '돈';
+var sql_table = 'food';
+
 db_config.connect(conn);
 
 app.use('/views', express.static(path.join(__dirname + '/views')));
@@ -26,18 +31,29 @@ app.get('/main_page', (req, res) => {
 });
 
 app.get('/searched_page', (req, res) => {
-    var sql = 'SELECT * FROM food';
+    
+    var sql = get_sql.get_query(sql_table, value)
+    
     conn.query(sql, (err, rows, fields) => {
         if(err) console.log('query is not excuted. select fail...\n' + err);
-        else res.render('searched_page.ejs', {list : rows});
+        else {
+            res.render('searched_page.ejs', {list : rows,
+                                            value : value,
+                                            sql_table : sql_table});
+            console.log(rows);
+        }
     })
     
     
 });
 
-app.get('/SELECTFOOD', (req, res) => {
-
-}) ;
+app.post('/main_pageAf', (req, res) => {
+    var body = req.body;
+    console.log(body);
+    value = body.searched;
+    sql_table = body.option;
+    res.redirect('/searched_page');
+});
 
 function printSQL() {
     var sql = 'SELECT * FROM food';
