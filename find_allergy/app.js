@@ -17,7 +17,8 @@ app.use(bodyParser.urlencoded({extended : false}));
 //app.use(express.static(path.join(__dirname, '/')));
 
 app.get('/', (req, res) => {
-    res.send('ROOT');
+    //res.send('ROOT');
+    res.render('main_page.ejs');
 });
 
 app.get('/main_page', (req, res) => {
