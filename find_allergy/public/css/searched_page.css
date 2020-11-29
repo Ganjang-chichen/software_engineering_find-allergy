@@ -1,0 +1,46 @@
+body {
+    height: 100vh;
+    background-color: #f9ed69;
+    font-family: 'Nanum Brush Script', cursive;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searched_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-inline-start: 0px;
+
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    width: 40%;
+
+    background-color: #e69667;
+    border: solid #fc5156 5px;
+    border-radius: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.searched_index {
+    padding-inline-start: 0px;
+    padding: 10px;
+    background-color: #e69667;
+    border: solid #fc5156 5px;
+    border-radius: 30px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.searched_index-li-btn {
+    background-color: rgba(1, 1, 1, 0);
+    border: none;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 25px;
+    font-weight: bold;
+}

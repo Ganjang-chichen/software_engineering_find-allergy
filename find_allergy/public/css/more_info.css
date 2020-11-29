@@ -1,0 +1,9 @@
+
+.select_allergy-more_info>span {
+    background-color: cadetblue;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 20px;
+    margin: 10px ;
+    border: solid black 1px;
+    border-radius: 3px;
+}

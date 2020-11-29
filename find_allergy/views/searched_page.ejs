@@ -1,36 +1,58 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결과</title>
     <link rel="stylesheet" href="css/reset.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="css/searched_page.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nerko+One&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
 
     </header>
     <main>
-        <dir>
+        <dir class="searched_title">
+            <h1>입력값</h1>
             <h1 class="searched">option: <%=sql_table %></h1>
             <h1 class="searched">value: <%=value %></h1>
         </dir>
-        
 
-        <dir>
-            
+        <h1 class="searched_index">INDEX</h1>
+        <dir class="searched_index">
+
+
             <ul>
                 <% for(i = 0; i < list.length; i++) { %>
-                <li>
-                    <%=list[i].id %>
-                    <%=list[i].food_name %>
-                    <%=list[i].food_info %>
-                    <%=list[i].allergy_name %>
-                    <%=list[i].allergy_info %>
+
+                <form action="/searched_page-moreinfo" method="post">
+                    <li class="searched_index-li">
+
+                        <span class="searched_index-li-name">
+
+                            <input type="text" value="<%=list[i].food_name %>
+                                            <%=list[i].allergy_name %>" style="opacity: 0; 
+                                            width: 0px;" name="food_name">
+                            <%=list[i].food_name %>
+                            <%=list[i].allergy_name %> :
+                        </span>
+                        <span class="searched_index-li-info">
+                            <%=list[i].food_info %>
+                            <%=list[i].allergy_info %>
+                        </span>
+                        <button class="searched_index-li-btn">
+                            ⚙️
+                        </button>
+                </form>
                 </li>
                 <% } %>
             </ul>
 
-            
+
         </dir>
 
     </main>
@@ -38,4 +60,5 @@
 
     </footer>
 </body>
+
 </html>

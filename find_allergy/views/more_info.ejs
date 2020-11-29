@@ -1,0 +1,212 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/more_info.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nerko+One&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <form action="more_info-submit_temp" method="post">
+            <div>
+                <input type="text" value="<%=list[0].id %>" 
+                                            style="opacity: 0; 
+                                            width: 0px;" name="id">
+                <input type="text" value="<%=list[0].food_name %>
+                                            <%=list[0].allergy_name %>" style="opacity: 0; 
+                                            width: 0px;" name="food_name">
+                <%=list[0].food_name %>
+            </div>
+            <div>
+                <span> <%=list[0].food_info %> </span>
+            </div>
+            <div>
+
+                <% if(list[0].shrimp === 1) { %>
+                새우 
+                <% } %>
+                <% if(list[0].oyster === 1) { %>
+                굴 
+                <% } %>
+                <% if(list[0].crab === 1) { %>
+                게 
+                <% } %>
+                <% if(list[0].mussel === 1) { %>
+                홍합 
+                <% } %>
+                <% if(list[0].squid === 1) { %>
+                오징어
+                <% } %>
+                <% if(list[0].abalone === 1) { %>
+                전복 
+                <% } %>
+                <% if(list[0].Mackerel === 1) { %>
+                고등어 
+                <% } %>
+                <% if(list[0].shellfish === 1) { %>
+                조개류 
+                <% } %>
+                <% if(list[0].buckwheat === 1) { %>
+                메밀 
+                <% } %>
+                <% if(list[0].wheat === 1) { %>
+                밀 
+                <% } %>
+                <% if(list[0].soybean === 1) { %>
+                대두 
+                <% } %>
+                <% if(list[0].walnut === 1) { %>
+                호두 
+                <% } %>
+                <% if(list[0].peanut === 1) { %>
+                땅콩 
+                <% } %>
+                <% if(list[0].pinenuts === 1) { %>
+                잣 
+                <% } %>
+                <% if(list[0].poultry === 1) { %>
+                알류 
+                <% } %>
+                <% if(list[0].milk === 1) { %>
+                우유 
+                <% } %>
+                <% if(list[0].beef === 1) { %>
+                쇠고기 
+                <% } %>
+                <% if(list[0].fork === 1) { %>
+                돼지고기 
+                <% } %>
+                <% if(list[0].chicken === 1) { %>
+                닭고기 
+                <% } %>
+                <% if(list[0].peach === 1) { %>
+                복숭아 
+                <% } %>
+                <% if(list[0].toamto === 1) { %>
+                토마토 
+                <% } %>
+                <% if(list[0].sulfurous_acid === 1) { %>
+                아황산류 
+                <% } %>
+
+            </div>
+            <div>
+                <h1>그 뭐다냐 재입력창이당</h1>
+                <textarea name="food_info" id="" cols="30" rows="10" maxlength="254"></textarea>
+                
+            </div>
+            <div class="select_allergy-more_info">
+                <br>
+                <span>
+                    <input type="checkbox" name="checkbox_shrimp" <% if(list[0].shrimp === 1) { %> checked <% } %>>
+                    <label for="checkbox-shrimp">새우</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_oyster" <% if(list[0].oyster === 1) { %> checked <% } %>>
+                    <label for="checkbox-oyster">굴</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_creb" <% if(list[0].creb === 1) { %> checked <% } %>> <label
+                        for="checkbox-creb">게</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_mussel" <% if(list[0].mussel === 1) { %> checked <% } %>>
+                    <label for="checkbox-mussel">홍합</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_squid" <% if(list[0].squid === 1) { %> checked <% } %>> <label
+                        for="checkbox-squid">오징어</label>
+                </span>
+                <br><br>
+                <span>
+                    <input type="checkbox" name="checkbox_abalone" <% if(list[0].abalone === 1) { %> checked <% } %>>
+                    <label for="checkbox-abalone">전복</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_Mackerel" <% if(list[0].Mackerel === 1) { %> checked <% } %>>
+                    <label for="checkbox-Mackerel">고등어</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_shellfish" <% if(list[0].shellfish === 1) { %> checked
+                        <% } %>> <label for="checkbox-shellfish">조개류</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_buckwheat" <% if(list[0].buckwheat === 1) { %> checked
+                        <% } %>> <label for="checkbox-buckwheat">메밀</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_wheat" <% if(list[0].wheat === 1) { %> checked <% } %>> <label
+                        for="checkbox-wheat">밀</label>
+                </span>
+                <br><br>
+                <span>
+                    <input type="checkbox" name="checkbox_soybean" <% if(list[0].soybean === 1) { %> checked <% } %>>
+                    <label for="checkbox-soybean">대두</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_walnut" <% if(list[0].walnut === 1) { %> checked <% } %>>
+                    <label for="checkbox-walnut">호두</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_peanut" <% if(list[0].peanut === 1) { %> checked <% } %>>
+                    <label for="checkbox-peanut">땅콩</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_pinenuts" <% if(list[0].pinenuts === 1) { %> checked <% } %>>
+                    <label for="checkbox-pinenuts">잣</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_poultry" <% if(list[0].poultry === 1) { %> checked <% } %>>
+                    <label for="checkbox-poultry">알류</label>
+                </span>
+                <br><br>
+                <span>
+                    <input type="checkbox" name="checkbox_milk" <% if(list[0].milk === 1) { %> checked <% } %>> <label
+                        for="checkbox-milk">우유</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_beef" <% if(list[0].beef === 1) { %> checked <% } %>> <label
+                        for="checkbox-beef">쇠고기</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_fork" <% if(list[0].fork === 1) { %> checked <% } %>> <label
+                        for="checkbox-fork">돼지고기</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_chicken" <% if(list[0].chicken === 1) { %> checked <% } %>>
+                    <label for="checkbox-chicken">닭고기</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_peach" <% if(list[0].peach === 1) { %> checked <% } %>> <label
+                        for="checkbox-peach">복숭아</label>
+                </span>
+                <br><br>
+                <span>
+                    <input type="checkbox" name="checkbox_tomato" <% if(list[0].toamto === 1) { %> checked <% } %>>
+                    <label for="checkbox-tomato">토마토</label>
+                </span>
+                <span>
+                    <input type="checkbox" name="checkbox_sulfurous_acid" <% if(list[0].sulfurous_acid === 1) { %>
+                        checked <% } %>> <label for="checkbox-sulfurous_acid">아황산류</label>
+                </span>
+                
+            </div>
+            <br>
+            <button type="submit" >SUBMIT!</button>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+
+</html>
