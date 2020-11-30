@@ -16,7 +16,17 @@
 
     </header>
     <main>
-        <form action="more_info-submit_temp" method="post">
+
+        <div>
+            <form action="/mv-searched_page" method="get">
+                <button>
+                    <i class="fas fa-arrow-circle-left"></i>
+                </button>
+                <span>back</span>
+            </form>
+        </div>
+
+        <form action="/more_info-submit_temp" method="post">
             <div>
                 <input type="text" value="<%=list[0].id %>" 
                                             style="opacity: 0; 
@@ -98,15 +108,6 @@
                 아황산류 
                 <% } %>
 
-            </div>
-
-            <div>
-                <form action="/mv-searched_page" method="get">
-                    <button>
-                        <i class="fas fa-arrow-circle-left"></i>
-                    </button>
-                    <span>back</span>
-                </form>
             </div>
 
             <div>

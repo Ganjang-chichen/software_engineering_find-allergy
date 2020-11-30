@@ -5,8 +5,7 @@ function set_query(sql_table, value) {
 
     if(sql_table === 'food') {
         query = `SELECT * FROM ${sql_table} 
-        WHERE LOWER(${sql_table}_name) LIKE (LOWER('${value}%'))
-        OR LOWER(${sql_table}_name) LIKE(LOWER('_${value}'))`;
+        WHERE LOWER(${sql_table}_name) LIKE (LOWER('%${value}%'))`;
     }else if(sql_table === 'allergy') {
         query = `SELECT * 
         FROM food 
