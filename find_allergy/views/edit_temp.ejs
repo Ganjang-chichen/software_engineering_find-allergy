@@ -1,0 +1,156 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/reset.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <dir>
+            <h1>임시 데이터</h1>
+
+            <ul>
+
+                <li>
+
+                    <% for (i = 0; i < temp_list.length; i++) { %>
+                        음식명: <%=temp_list[i].food_name %> <br>
+                        정보: <%=temp_list[i].food_info %> <br>
+                        shrimp: <%=temp_list[i].shrimp %>
+                        oyster: <%=temp_list[i].oyster %>
+                        crab: <%=temp_list[i].crab %>
+                        mussel: <%=temp_list[i].mussel %>
+                        squid: <%=temp_list[i].squid %>
+                        abalone: <%=temp_list[i].abalone %>
+                        Mackerel: <%=temp_list[i].Mackerel %>
+                        shellfish: <%=temp_list[i].shellfish %> <br>
+                        buckwheat: <%=temp_list[i].buckwheat %>
+                        wheat: <%=temp_list[i].wheat %>
+                        soybean: <%=temp_list[i].soybean %>
+                        walnut: <%=temp_list[i].walnut %>
+                        peanut: <%=temp_list[i].peanut %>
+                        pinenuts: <%=temp_list[i].pinenuts %>
+                        poultry: <%=temp_list[i].poultry %>
+                        milk: <%=temp_list[i].milk %> <br>
+                        beef: <%=temp_list[i].beef %>
+                        fork: <%=temp_list[i].fork %>
+                        chicken: <%=temp_list[i].chicken %>
+                        peach: <%=temp_list[i].peach %>
+                        tomato: <%=temp_list[i].tomato %>
+                        sulfurous_acid: <%=temp_list[i].sulfurous_acid %> <br>
+
+                        <% isExist = false; %>
+                        <% for( j = 0; j < food_list.length; j++) { %>
+                            <% if(temp_list[i].food_name === food_list[j].food_name) { %>
+                                <% isExist = true; %>
+                            <% } %>
+
+                        <% } %>
+
+
+                        <% if(isExist === true) { %>
+
+                            <form action="edit_temp-modify" method="post">
+                                <input type="text" 
+                                        value="<%=i %>" 
+                                        name="modify_order" 
+                                        style="opacity: 0;
+                                                width: 0px;">
+                                <button type="submit">수정</button>
+                            </form>
+                        <% }else { %>
+                            <form action="edit_temp-ins" method="post">
+                                <input type="text" 
+                                        value="<%=i %>" 
+                                        name="input_order" 
+                                        style="opacity: 0;
+                                                width: 0px;">
+                                <button type="submit">삽입</button>
+                            </form>
+                        <% } %>
+
+                        <form action="/edit_temp-delete" method="post">
+                            <input type="text" 
+                                    value="<%=i %>" 
+                                    name="delete_order" 
+                                    style="opacity: 0;
+                                            width: 0px;">
+                            <button type="submit">삭제</button> <br>
+                        </form>
+
+                    <% } %>
+
+                    <br>
+                </li>
+
+            </ul>
+        </dir>
+
+        <dir>
+
+            <h1>실제 데이터</h1>
+            <ul>
+                <li>
+
+                    <% for (i = 0; i < food_list.length; i++) { %>
+                        ID: <%=food_list[i].id %> <br>
+                        음식명: <%=food_list[i].food_name %> <br>
+                        정보: <%=food_list[i].food_info %> <br>
+                        shrimp: <%=food_list[i].shrimp %>
+                        oyster: <%=food_list[i].oyster %>
+                        crab: <%=food_list[i].crab %>
+                        mussel: <%=food_list[i].mussel %>
+                        squid: <%=food_list[i].squid %>
+                        abalone: <%=food_list[i].abalone %>
+                        Mackerel: <%=food_list[i].Mackerel %>
+                        shellfish: <%=food_list[i].shellfish %> <br>
+                        buckwheat: <%=food_list[i].buckwheat %>
+                        wheat: <%=food_list[i].wheat %>
+                        soybean: <%=food_list[i].soybean %>
+                        walnut: <%=food_list[i].walnut %>
+                        peanut: <%=food_list[i].peanut %>
+                        pinenuts: <%=food_list[i].pinenuts %>
+                        poultry: <%=food_list[i].poultry %>
+                        milk: <%=food_list[i].milk %> <br>
+                        beef: <%=food_list[i].beef %>
+                        fork: <%=food_list[i].fork %>
+                        chicken: <%=food_list[i].chicken %>
+                        peach: <%=food_list[i].peach %>
+                        tomato: <%=food_list[i].tomato %>
+                        sulfurous_acid: <%=food_list[i].sulfurous_acid %> <br>
+
+                        <form action="/edit_food-delete" method="post">
+                            <input type="text" 
+                                    value="<%=food_list[i].id %>" 
+                                    name="delete_food" 
+                                    style="opacity: 0;
+                                            width: 0px;">
+                            <button type="submit">삭제</button> <br>
+                        </form>
+
+                    <% } %>
+
+                    <br>
+                </li>
+            </ul>
+        </dir>
+
+        <dir>
+            <form action="/download" method="get">
+                <button type="submit">음식 json 다운로드</button>
+            </form>
+        </dir>
+    </main>
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>

@@ -133,8 +133,12 @@
         </dir>
 
         <dir>
+            <% if(list.length !== 0) { %>
+
             <h1><%=list[0].allergy_name %></h1>
             <h1><%=list[0].allergy_info %></h1>
+
+            <% } %>
         </dir>
     </main>
     <footer>

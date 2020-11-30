@@ -4,17 +4,40 @@ function erasestr(str){
     temp_str = str.replace(/ /g, '');
     temp_str = temp_str.replace(/\\/g, '');
     temp_str = temp_str.replace(/\//g, '');
+    temp_str = temp_str.replace(/!/g, '');
+    temp_str = temp_str.replace(/@/g, '');
+    temp_str = temp_str.replace(/#/g, '');
+    temp_str = temp_str.replace(/\$/g, '');
+    temp_str = temp_str.replace(/%/g, '');
+    temp_str = temp_str.replace(/\^/g, '');
+    temp_str = temp_str.replace(/\&/g, '');
+    temp_str = temp_str.replace(/\*/g, '');
+    temp_str = temp_str.replace(/\(/g, '');
+    temp_str = temp_str.replace(/\)/g, '');
+    temp_str = temp_str.replace(/=/g, '');
+    temp_str = temp_str.replace(/\+/g, '');
+    temp_str = temp_str.replace(/\`/g, '');
+    temp_str = temp_str.replace(/\'/g, '');
+    temp_str = temp_str.replace(/\"/g, '');
+    temp_str = temp_str.replace(/;/g, '');
+    temp_str = temp_str.replace(/:/g, '');
+    temp_str = temp_str.replace(/\,/g, '');
+    temp_str = temp_str.replace(/\./g, '');
+    temp_str = temp_str.replace(/\?/g, '');
+    temp_str = temp_str.replace(/\</g, '');
+    temp_str = temp_str.replace(/\>/g, '');
+
     return temp_str;
 }
 
 function set_query() {
-    var sql = 'INSERT INTO temp_food VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+    var sql = 'INSERT INTO temp_food (food_name, food_info, shrimp, oyster, crab, mussel, squid, abalone, Mackerel, shellfish, buckwheat, wheat, soybean, walnut, peanut, pinenuts, poultry, milk, beef, fork, chicken, peach, tomato, sulfurous_acid) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
 
     return sql;
 }
 
 function set_params(obj) {
-    var id = obj.id;
+    
     var food_name = erasestr(obj.food_name);
     var food_info = obj.food_info;
     var checkbox_shrimp;
@@ -106,7 +129,7 @@ function set_params(obj) {
     else checkbox_sulfuros_acid = 0;
     
 
-    var params = [id, food_name, food_info,
+    var params = [ food_name, food_info,
         checkbox_shrimp, checkbox_oyster,
         checkbox_crab, checkbox_mussel,
         checkbox_squid, checkbox_abalone,
@@ -122,5 +145,114 @@ function set_params(obj) {
     return params;
 }
 
+
+function modify_table(obj, id) {
+    
+    var food_name = obj.food_name;
+    var food_info = obj.food_info;
+    var shrimp = obj.shrimp;
+    var oyster = obj.oyster;
+    var crab = obj.crab;
+    var mussel = obj.mussel;
+    var squid = obj.squid;
+    var abalone = obj.abalone;
+    var Mackerel = obj.Mackerel;
+    var shellfish = obj.shellfish;
+    var buckwheat = obj.buckwheat;
+    var wheat = obj.wheat;
+    var soybean = obj.soybean;
+    var walnut = obj.walnut;
+    var peanut = obj.peanut;
+    var pinenuts = obj.pinenuts;
+    var poultry = obj.poultry;
+    var milk = obj.milk;
+    var beef = obj.beef;
+    var fork = obj.fork;
+    var chicken = obj.chicken;
+    var peach = obj.peach;
+    var tomato = obj.tomato;
+    var sulfurous_acid = obj.sulfurous_acid;
+
+    var sql = `UPDATE food 
+                SET food_info = ?,
+                    shrimp = ?,
+                    oyster = ?,
+                    crab = ?,
+                    mussel = ?,
+                    squid = ?,
+                    abalone = ?,
+                    Mackerel = ?,
+                    shellfish = ?,
+                    buckwheat = ?,
+                    wheat = ?,
+                    soybean = ?,
+                    walnut = ?,
+                    peanut = ?,
+                    pinenuts = ?,
+                    poultry = ?,
+                    milk = ?,
+                    beef = ?,
+                    fork = ?,
+                    chicken = ?,
+                    peach = ?,
+                    tomato = ?,
+                    sulfurous_acid = ? 
+                WHERE id = ?`;
+
+    var params = [food_info, shrimp, oyster, crab, mussel,
+                    squid, abalone, Mackerel, shellfish, buckwheat,
+                    wheat, soybean, walnut, peanut, pinenuts,
+                    poultry, milk, beef, fork, chicken, 
+                    peach, tomato, sulfurous_acid, id];
+
+    return {sql : sql,
+            params : params};
+}
+
+function insert_table() {
+    var sql = 'INSERT INTO food (food_name, food_info, shrimp, oyster, crab, mussel, squid, abalone, Mackerel, shellfish, buckwheat, wheat, soybean, walnut, peanut, pinenuts, poultry, milk, beef, fork, chicken, peach, tomato, sulfurous_acid) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)';
+
+    return sql;
+}
+
+function insert_params(obj) {
+    
+    var food_name = obj.food_name;
+    var food_info = obj.food_info;
+    var shrimp = obj.shrimp;
+    var oyster = obj.oyster;
+    var crab = obj.crab;
+    var mussel = obj.mussel;
+    var squid = obj.squid;
+    var abalone = obj.abalone;
+    var Mackerel = obj.Mackerel;
+    var shellfish = obj.shellfish;
+    var buckwheat = obj.buckwheat;
+    var wheat = obj.wheat;
+    var soybean = obj.soybean;
+    var walnut = obj.walnut;
+    var peanut = obj.peanut;
+    var pinenuts = obj.pinenuts;
+    var poultry = obj.poultry;
+    var milk = obj.milk;
+    var beef = obj.beef;
+    var fork = obj.fork;
+    var chicken = obj.chicken;
+    var peach = obj.peach;
+    var tomato = obj.tomato;
+    var sulfurous_acid = obj.sulfurous_acid;
+
+    var params = [food_name, food_info, shrimp, oyster, crab, mussel,
+        squid, abalone, Mackerel, shellfish, buckwheat,
+        wheat, soybean, walnut, peanut, pinenuts,
+        poultry, milk, beef, fork, chicken, 
+        peach, tomato, sulfurous_acid];
+
+    return params;
+}
+
 module.exports.get_query = set_query;
 module.exports.get_params = set_params;
+module.exports.modify_query = modify_table;
+module.exports.insert_query = insert_table;
+module.exports.insert_params = insert_params;

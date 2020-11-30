@@ -26,6 +26,10 @@ body {
     font-size: 30px;
     font-weight: bold;
 }
+.searched_subject {
+    font-size: 20px;
+    font-weight: bold;
+}
 
 .searched_index {
     padding-inline-start: 0px;
