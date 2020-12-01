@@ -6,6 +6,7 @@
     <title>결과</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/searched_page.css">
+    <link rel="stylesheet" href="css/btn.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nerko+One&display=swap"
         rel="stylesheet">
@@ -22,18 +23,21 @@
             <h1 class="searched">value: <%=value %></h1>
         </dir>
 
-        <dir>
+        <dir class="mv_main-searched">
             <form action="/mv-main_page" method="get">
-                <button>
+                <button class="set_btn">
                     <i class="fas fa-arrow-circle-left"></i>
+                    <span>back</span>
                 </button>
-                <span>back</span>
             </form>
         </dir>
 
         <h1 class="searched_subject">INDEX</h1>
         <dir class="searched_index">
 
+            <% if(list.length === 0) { %>
+                <h1>일치하는 음식이 없습니다.</h1>
+            <% } %>
 
             <ul>
                 <% for(i = 0; i < list.length; i++) { %>

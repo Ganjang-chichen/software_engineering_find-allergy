@@ -1,0 +1,7 @@
+.set_btn {
+    background-color: rgba(1, 1, 1, 0);
+    border: none;
+    font-family: 'Nanum Brush Script', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}

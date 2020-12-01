@@ -11,13 +11,13 @@ let jsonFile = require('jsonfile');
 var get_sql = require(__dirname + '/config/make_query.js');
 var sql_insert_temp = require(__dirname + '/config/insert_temp_query.js');
 
-var value = '돈';
-var sql_table = 'food';
-var food_name = '돈까스';
-var get_query_obj;
-var get_food_obj;
+var value; // main_page 검색창 입력값
+var sql_table; // main_page 검색 테이블 이름
+var food_name; // searched_page에서 수정할 음식이름
+var get_query_obj; // edit_temp페이지에서 사용하는 temp_food 테이블 obj
 
-function erasestr(str){
+
+function erasestr(str){ // 특수문자 및 공백 제거
     var temp_str = '';
     temp_str = str.replace(/ /g, '');
     temp_str = temp_str.replace(/\\/g, '');
@@ -79,9 +79,9 @@ app.post('/main_pageAf', (req, res) => {
 
     if(value !== '') {
     sql_table = body.option;
-    res.redirect('/searched_page');
+    res.redirect('/searched_page'); // 입력값이 있으면 searched_page로
     }else{
-        res.redirect('/main_page');
+        res.redirect('/main_page'); // 입력값이 없으면 현재 패이지로
         
     }
 });
@@ -102,7 +102,6 @@ app.get('/searched_page', (req, res) => {
     })
     
 });
-
 
 
 app.post('/searched_page-moreinfo', (req, res) => {
@@ -145,7 +144,7 @@ app.post('/more_info-submit_temp', (req, res) => {
 
 });
 
-app.get('/allergy_info', (req,res) => {
+app.get('/allergy_info', (req,res) => { // 
     var temp_sql = `SELECT * FROM allergy WHERE allergy_name = 'empty'`;
     console.log(temp_sql);
     conn.query(temp_sql, (err, rows, fields) => {
@@ -155,7 +154,7 @@ app.get('/allergy_info', (req,res) => {
     })
 });
 
-app.get('/mv-allergy_info', (req, res) => {
+app.get('/mv-allergy_info', (req, res) => { // 메인 페이지에서 버튼 누를 시 반응
     var temp_sql = `SELECT * FROM allergy WHERE allergy_name = 'empty'`;
     console.log(temp_sql);
     conn.query(temp_sql, (err, rows, fields) => {
@@ -165,7 +164,7 @@ app.get('/mv-allergy_info', (req, res) => {
     })
 })
 
-app.post('/allergy_info-getinfo', (req, res) => {
+app.post('/allergy_info-getinfo', (req, res) => { // allergy_info 에서 알러지 버튼 누르면 정보 띄움
     var body = req.body;
     console.log(body);
 
@@ -201,7 +200,7 @@ app.post('/insert_info-submit_temp', (req, res) => {
     })
 })
 
-app.get('/edit_temp', (req, res) => {
+app.get('/edit_temp', (req, res) => { // 첫 입장 시 화면 출력
     var temp_sql = `SELECT * FROM food`;
     var temp_sql2 = `SELECT * FROM temp_food`;
     
@@ -257,6 +256,8 @@ app.post('/edit_temp-modify', (req, res) => {
                     conn.query(temp_sql.sql, temp_sql.params, (err) => {
                         if(err) console.log(`query is not excuted. update fail....\n ${err}`);
                         else {
+                            // 새로고침
+                            //-------------------------------------------------------------------
                             var temp_sqll = `SELECT * FROM food`;
                             var temp_sqll2 = `SELECT * FROM temp_food`;
                             
@@ -280,6 +281,7 @@ app.post('/edit_temp-modify', (req, res) => {
                                     });
                                 }
                             })
+                            //---------------------------------------------------------------------
                         }
                     })
                 }

@@ -8,6 +8,19 @@ body {
     align-items: center;
 }
 
+.allergy_info-main{
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
+
+.insert_info-main {
+    position: absolute;
+    right: 10%;
+    top: 15%;
+}
+
+
 .search_box {
     display: flex;
     justify-content: center;

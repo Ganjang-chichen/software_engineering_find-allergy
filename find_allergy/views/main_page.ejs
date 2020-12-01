@@ -5,6 +5,7 @@
     <title>알레르기 탐색기</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/main_page.css">
+    <link rel="stylesheet" href="css/btn.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nerko+One&display=swap" rel="stylesheet">
 
@@ -15,21 +16,23 @@
     </header>
     <main class="main__m-page">
         
-        <dir>
+        <dir class="allergy_info-main">
             <form action="/mv-allergy_info" method="get">
-                <button>
+                <button class="set_btn">
                     <i class="fas fa-info-circle"></i>
+                    <span>allergy info</span>
                 </button>
-                <span>allergy info</span>
+                
             </form>
         </dir>
 
-        <dir>
+        <dir class="insert_info-main">
             <form action="/mv-insert_info" method="get">
-                <button>
+                <button class="set_btn">
                     <i class="fas fa-plus-square"></i>
+                    <span>insert info</span>
                 </button>
-                <span>insert info</span>
+                
             </form>
         </dir>
 

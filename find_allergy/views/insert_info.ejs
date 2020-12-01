@@ -16,23 +16,26 @@
 
     </header>
     <main>
+
+        <dir>
+            <form action="/mv-main_page" method="get">
+                <button>
+                    <i class="fas fa-arrow-circle-left"></i>
+                </button>
+                <span>back</span>
+            </form>
+        </dir>
+
         <form action="insert_info-submit_temp" method="post">
             <div>
                 <h1>음식 이름</h1>
                 <input type="text" name="food_name" placeholder="food name">
                 
             </div>
-            <dir>
-                <form action="/mv-main_page" method="get">
-                    <button>
-                        <i class="fas fa-arrow-circle-left"></i>
-                    </button>
-                    <span>back</span>
-                </form>
-            </dir>
+            
             
             <div>
-                <h1>그 뭐다냐 재입력창이당</h1>
+                <h1>음식 정보 입력</h1>
                 <textarea name="food_info" id="" cols="30" rows="10" maxlength="254"></textarea>
                 
             </div>
