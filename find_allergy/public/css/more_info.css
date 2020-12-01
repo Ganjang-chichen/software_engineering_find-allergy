@@ -1,9 +1,88 @@
 
-.select_allergy-more_info>span {
-    background-color: cadetblue;
+body {
+    height: 100vh;
+    background-color: #f9ed69;
+    font-family: 'Nanum Brush Script', cursive;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.mody-curr_info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    border: solid #fc5156 3px;
+    margin: 10px;
+}
+
+.mody-food_name{
+    margin: 5px;
+    
+}
+
+.mody-food_name-txt{
+    
+    font-size: 30px;
+}
+
+.mody-input_area{
+    margin: 10px;
+    padding: 10px;
+    border: solid #e69667 3px;
+    border-radius: 8px;
+}
+
+.mody-textarea{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+}
+
+.main-more_info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+.select_allergy-more_info{
+    display: flex;
+    background-color:  #fc5156;
+    border-radius: 10px;
+
+}
+
+.select_allergy-more_info>div>div {
+    background-color:  #e69667;
     font-family: 'Nanum Brush Script', cursive;
     font-size: 20px;
-    margin: 10px ;
+    font-weight: bold;
+    margin: 10px;
+    width: 80px;
+    height: 25px;
     border: solid black 1px;
     border-radius: 3px;
+}
+
+.mv_searched_modi {
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
+
+.mody-submit_btn{
+    background-color:  #fc5156;
+    font-family: 'Nanum Brush Script', cursive;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    border: solid black 2px;
+    right: 0;
 }

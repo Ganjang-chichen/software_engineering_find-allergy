@@ -1,6 +1,29 @@
+body {
+    background-color: yellowgreen;
+}
+
+
+
+.allergy_info-main>dir{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.allergy_info-back_btn{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}
+
 .allergy_info {
     margin: 10px, 10px;
     background-color: coral;
     height: 200px;
     width: 100px;
+}
+
+.allergy_info-{
+    display: flex;
+    flex-direction: column;
 }

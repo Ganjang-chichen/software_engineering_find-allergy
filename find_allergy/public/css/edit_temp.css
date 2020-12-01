@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+    color: whitesmoke;
+    padding: 5px;
+}
+
+.edit-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+.edit-temp_list{
+    margin: 5px;
+    border: solid whitesmoke 3px;
+    border-radius: 3px;
+}
+
+.edit-food_list{
+    margin: 5px;
+    border: solid whitesmoke 3px;
+    border-radius: 3px;
+}

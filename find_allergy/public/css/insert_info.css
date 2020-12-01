@@ -1,0 +1,17 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9ed69;
+}
+
+.insert_info-main{
+    display: flex;
+}
+
+.insert-btn{
+    position: absolute;
+    top: 10%;
+    right: 10%;
+}

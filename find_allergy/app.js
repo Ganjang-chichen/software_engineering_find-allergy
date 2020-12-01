@@ -54,6 +54,7 @@ app.use('/views', express.static(path.join(__dirname + '/views')));
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
+// 클라이언트 POST request data의 body로 부터 파라미터를 편하게 추출하게끔 설정
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended : false}));
 
@@ -457,12 +458,7 @@ app.get('/download', (req, res) => {
     
 })
 
-function printSQL() {
-    var sql = 'SELECT * FROM food';
-    conn.query(sql, (err, rows, fields) => {
-        console.log(rows);
-    })
-}
+
 
 var server = app.listen(3000, function () {
     console.log(`load Success!`);
