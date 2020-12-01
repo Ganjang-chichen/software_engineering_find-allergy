@@ -211,7 +211,7 @@ app.get('/edit_temp', (req, res) => { // 첫 입장 시 화면 출력
             conn.query(temp_sql2, (err, rows2, fields) => {
                 if(err) console.log(`query is not excuted. select fail....\n ${err}`);
                 else {
-
+                    // temp_list obj값 저장
                     get_query_obj = rows2;
                     
                     console.log(get_query_obj);
@@ -230,7 +230,7 @@ app.get('/edit_temp', (req, res) => { // 첫 입장 시 화면 출력
 app.post('/edit_temp-modify', (req, res) => {
     var body = req.body;
     var num_temp = body.modify_order;
-    var id_from_food;
+    var id_from_food; // 수정할 데이터의 실제 아이디 값
     var temp_sql;
 
     console.log(`num_temp : ${num_temp}`);
@@ -239,6 +239,7 @@ app.post('/edit_temp-modify', (req, res) => {
     var temp_food_name = temp_food_obj.food_name;
     console.log(`temp_food : ${temp_food_name}`);
 
+    // 수정할 데이터의 실제 아이디 값을 가져오는 쿼리문: temp_sql_getid
     var temp_sql_getid = `SELECT id FROM food WHERE food_name = '${temp_food_name}'`;
     conn.query(temp_sql_getid, (err, rows, fields) => {
         if(err) console.log(`query is not excuted. select fail....\n ${err}`);
@@ -246,13 +247,16 @@ app.post('/edit_temp-modify', (req, res) => {
             id_from_food = rows[0].id;
             console.log(`id from food ${id_from_food}`);
             temp_sql = sql_insert_temp.modify_query(get_query_obj[num_temp], id_from_food);
+            // temp_sql = {sql: sql문, params : 파라미터값}
 
+            // temp_sql_delte : 편집한 데이터 temp_food 에서 삭제 쿼리
             var temp_sql_delete = `DELETE FROM temp_food WHERE id = ?`;
             conn.query(temp_sql_delete, get_query_obj[num_temp].id, (err) => {
                 if(err) console.log(`query is not excuted. delete fail....\n ${err}`);
                 else  {
                     console.log('delete success');
 
+                    // food 데이터 수정
                     conn.query(temp_sql.sql, temp_sql.params, (err) => {
                         if(err) console.log(`query is not excuted. update fail....\n ${err}`);
                         else {
@@ -291,7 +295,8 @@ app.post('/edit_temp-modify', (req, res) => {
     
 })
 
-app.post('/edit_temp-ins', (req, res) => {
+// temp_food 에들어있는 데이터를 food 테이블에 추가
+app.post('/edit_temp-ins', (req, res) => { 
     var body = req.body;
     var num_temp = body.input_order;
     
@@ -339,6 +344,7 @@ app.post('/edit_temp-ins', (req, res) => {
     });
 });
 
+// 임시 데이터 창의 삭제 버튼 누를시 동작
 app.post('/edit_temp-delete', (req, res) => {
     var body = req.body;
     var num_temp = body.delete_order;
@@ -380,6 +386,7 @@ app.post('/edit_temp-delete', (req, res) => {
 
 });
 
+// 실제 food 테이블 삭제
 app.post('/edit_food-delete', (req, res) => {
     var body = req.body;
     var num_temp = body.delete_food;
